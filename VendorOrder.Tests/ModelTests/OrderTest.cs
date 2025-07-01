@@ -69,5 +69,18 @@ namespace VendorOrder.Tests
 
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void Find_ReturnsCorrectOrder_Order()
+    {
+      string description1 = "12 Strawberries";
+      string description2 = "4 potatoes";
+      Order newOrder1 = new Order(description1);
+      Order newOrder2 = new Order(description2);
+
+      Order result = Order.Find(2);
+
+      Assert.AreEqual(newOrder2, result);
+    }
   }
 }
