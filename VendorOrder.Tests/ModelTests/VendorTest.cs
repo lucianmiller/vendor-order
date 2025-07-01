@@ -6,14 +6,13 @@ using System;
 namespace VendorOrder.Tests
 {
   [TestClass]
-  public class CategoryTests
-  // public class CategoryTests : IDisposable
+  public class CategoryTests : IDisposable
   {
 
-    // public void Dispose()
-    // {
-    //   Vendor.ClearAll();
-    // }
+    public void Dispose()
+    {
+      Vendor.ClearAll();
+    }
 
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
@@ -21,5 +20,43 @@ namespace VendorOrder.Tests
       Vendor newVendor = new Vendor("test vendor");
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
+
+    [TestMethod]
+    public void GetName_ReturnsName_Sting()
+    {
+      string name = "Test Vendor";
+      Vendor newVendor = new Vendor(name);
+
+      string result = newVendor.Name;
+
+      Assert.AreEqual(name, result);
+    }
+
+    [TestMethod]
+    public void GetId_ReturnsVendorId_Int()
+    {
+      string name = "Test Vendor";
+      Vendor newVendor = new Vendor(name);
+
+      int result = newVendor.Id;
+
+      Assert.AreEqual(1, result);
+    }
+
+    [TestMethod]
+    public void GetAll_ReturnsAllVendorObjects_VendorList()
+    {
+      string vendor1 = "Betty";
+      string vendor2 = "Garry";
+      Vendor newVendor1 = new Vendor(vendor1);
+      Vendor newVendor2 = new Vendor(vendor2);
+      List<Vendor> newVendorList = new List<Vendor> {newVendor1, newVendor2};
+
+      List<Vendor> result = Vendor.GetAll();
+
+      CollectionAssert.AreEqual(newVendorList, result);
+    }
+
+    
   }
 }
