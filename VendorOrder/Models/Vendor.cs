@@ -31,5 +31,10 @@ namespace VendorOrder.Models
     {
       return _instances[searchId-1];
     }
+
+    public void AddOrder(Order order)
+    {
+      Order.Add(order);
+    }
   }
 }
