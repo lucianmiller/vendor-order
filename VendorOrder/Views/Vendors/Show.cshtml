@@ -3,7 +3,7 @@
 }
 
 @using VendorOrder.Models
-<h3>Orders for @Model["vendor"].Name</h3>
+<h1 class="display-3">Orders for @Model["vendor"].Name</h3>
 <br>
 <ol>
   @foreach (Order order in @Model["order"])
