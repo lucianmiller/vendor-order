@@ -17,7 +17,7 @@ In the terminal application of your choice, follow these steps:
 3. Type `dotnet restore` to install necessary files
 4. Type `dotnet watch run` to start program in your web browser
 5. Create new vendors and orders with buttons provided
-6. To shut off program, either exit out of terminal or press SHIT+C keys in command line
+6. To shut off program, either exit out of terminal or press SHIFT+C keys in command line
 
 ## Known Bugs
 ___
